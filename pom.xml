@@ -102,7 +102,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>ramo.klevis.Run</mainClass>
+                    <mainClass>run.Run</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -119,7 +119,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>ramo.klevis.Run</mainClass>
+                            <mainClass>run.Run</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
