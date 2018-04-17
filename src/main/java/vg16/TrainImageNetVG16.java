@@ -36,6 +36,9 @@ import java.net.URL;
 import java.util.Random;
 import java.util.zip.Adler32;
 
+/**
+ * Created by klevis.ramo on 12/26/2017.
+ */
 public class TrainImageNetVG16 {
 
     private static final Logger LOGGER = org.slf4j.LoggerFactory.getLogger(TrainImageNetVG16.class);
