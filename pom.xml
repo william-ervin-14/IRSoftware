@@ -89,7 +89,38 @@
 
 
     <build>
-        <plugins>
+        <plugins>	
+        	<plugin>
+      <groupId>com.spotify</groupId>
+      <artifactId>docker-maven-plugin</artifactId>
+      <version>0.4.5</version>
+      <configuration>
+        <imageName>irsoftware</imageName>
+        <baseImage>java</baseImage>
+        <entryPoint>["java", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
+        <!-- copy the service's jar file from target into the root directory of the image --> 
+        <resources>
+           <resource>
+             <targetPath>/</targetPath>
+             <directory>${project.build.directory}</directory>
+             <include>${project.build.finalName}.jar</include>
+           </resource>
+        </resources>
+      </configuration>
+    </plugin>
+      <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.0.2</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>run.Run</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>     	
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
